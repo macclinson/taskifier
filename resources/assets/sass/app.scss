@@ -26,6 +26,38 @@ a:active{
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+li{
+  list-style: none;
+}
+.profile-name{
+  cursor: default;
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: transparent !important;
+  }
+  .material-icons{
+    position: relative;
+    top: -2px;
+  }
+}
+.loader-modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 9999;
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    transform: translate(-50%, -50%);
+  }
+}
 .navbar-brand {
     // width: 113px;
     // height: 66px;

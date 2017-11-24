@@ -26,7 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         $tasks = Task::get();
-        $truncated_body = str_limit('The quick brown fox jumps over the lazy dog', 20, ' (...)');
         return view('dashboard', compact('tasks'));
     }
 }

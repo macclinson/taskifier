@@ -29,8 +29,9 @@
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
                     <li>
-                        <a href="#" role="button" aria-haspopup="true">
-                            {{ Auth::user()->name }}
+                        <a href="#" role="button" aria-haspopup="true" class="profile-name">
+                          <i class="material-icons">person</i>
+                            <span>{{ Auth::user()->name }}</span>
                         </a>
                     </li>
                     <li>

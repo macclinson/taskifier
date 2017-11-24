@@ -23,7 +23,7 @@
       @endif
       @if($infoFlash = session('infoMessage'))
       <transition name="slide-fade" appear>
-          <div class="alert alert-info flash-message" v-show="shown" role="alert"><i class="material-icons">info</i> {{$infoFlash}}</div>
+          <div class="alert alert-warning flash-message" v-show="shown" role="alert"><i class="material-icons">info</i> {{$infoFlash}}</div>
       </transition>
       @endif
       @if($warningFlash = session('warningMessage'))
@@ -34,8 +34,13 @@
         @yield('content')
 
       @include('layouts.footer')
+      <div class="loader-modal" v-if="loader">
+        <img src="{{URL::asset('/images/spinner.gif')}}" alt="" />
+      </div>
     </div>
 
+
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- Scripts -->
     <script>
       $(document).ready(function(){
@@ -50,6 +55,5 @@
       });
     </script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

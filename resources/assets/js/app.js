@@ -20,9 +20,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app',
     data: {
-      shown: true
+      shown: true,
+      loader: false
     },
     methods: {
+      pageLoader: function(){
+        window.addEventListener('beforeunload', function(event) {
+          console.log("UNLOADING...");
+          this.loader = true;
+        });
+      }
     },
     created: function() {
       var self = this;

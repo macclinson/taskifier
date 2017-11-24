@@ -26,7 +26,7 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Taskify</button>
+            <button type="submit" @click="pageLoader()" class="btn btn-primary">Taskify</button>
           </div>
           @include('layouts.errors')
         </form>

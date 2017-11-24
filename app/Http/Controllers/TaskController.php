@@ -26,7 +26,8 @@ class TaskController extends Controller
 
       Task::create([
         'title' => request('title'),
-        'body' => request('body')
+        'body' => request('body'),
+        'user_id' => auth()->id()
       ]);
 
       return redirect('/dashboard');

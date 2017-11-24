@@ -992,9 +992,17 @@ Vue.component('example-component', __webpack_require__(38));
 var app = new Vue({
   el: '#app',
   data: {
-    shown: true
+    shown: true,
+    loader: false
   },
-  methods: {},
+  methods: {
+    pageLoader: function pageLoader() {
+      window.addEventListener('beforeunload', function (event) {
+        console.log("UNLOADING...");
+        this.loader = true;
+      });
+    }
+  },
   created: function created() {
     var self = this;
     setTimeout(function () {

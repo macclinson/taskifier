@@ -1,8 +1,3 @@
-<style>
-  li{
-    list-style: none;
-  }
-</style>
 @if(count($errors))
 <div class="alert alert-danger">
   <ul>
