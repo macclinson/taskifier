@@ -24,11 +24,13 @@ const app = new Vue({
       loader: false
     },
     methods: {
+      eventFunction: function(event){
+        console.log("UNLOADING...");
+        this.loader = true;
+      },
       pageLoader: function(){
-        window.addEventListener('beforeunload', function(event) {
-          console.log("UNLOADING...");
-          this.loader = true;
-        });
+        window.addEventListener('beforeunload', this.eventFunction);
+        window.addEventListener('unload', this.eventFunction);
       }
     },
     created: function() {

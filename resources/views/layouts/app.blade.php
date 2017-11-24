@@ -34,7 +34,7 @@
         @yield('content')
 
       @include('layouts.footer')
-      <div class="loader-modal" v-if="loader">
+      <div class="loader-modal" v-show="loader">
         <img src="{{URL::asset('/images/spinner.gif')}}" alt="" />
       </div>
     </div>
