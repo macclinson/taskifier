@@ -61,7 +61,7 @@ class TaskController extends Controller
 
     // Return view for editing a task
     public function edit($id){
-      $task = Task::find($id);
+      $task = Task::where('user_id', auth()->user()->id)->find($id);
       return view('tasks.edit', compact('task'));
     }
 
